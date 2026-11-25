@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="configurator_page" name="Configurador JOMA Mail (Salsita)">
+        <t t-call="website.layout">
+            <t t-set="pageName" t-value="'joma_salsita_configurator'"/>
+            <div id="wrap" class="o_joma_salsita_wrap">
+                <div id="joma-salsita-configurator"
+                     style="height: calc(100dvh - 90px); min-height: 600px;"
+                     t-att-data-script-url="salsita_script_url"
+                     t-att-data-locale="salsita_locale"
+                     t-att-data-box-types="salsita_box_types"
+                     t-att-data-logged="salsita_logged"
+                     t-att-data-owner="salsita_owner"
+                     t-att-data-csrf="request.csrf_token()"
+                     data-auth-url="/api/configurator/authorization"/>
+                <div id="joma-salsita-error" class="container my-4 d-none">
+                    <div class="alert alert-warning" role="alert">
+                        No se ha podido cargar el configurador. Recarga la página o inténtalo más tarde.
+                    </div>
+                </div>
+            </div>
+            <script type="module" src="/joma_salsita_configurator/static/src/js/configurator.js"/>
+        </t>
+    </template>
+</odoo>

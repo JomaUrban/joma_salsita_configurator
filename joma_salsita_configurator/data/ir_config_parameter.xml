@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <!-- Valores de producción facilitados por Salsita. Editables en
+         Ajustes > Técnico > Parámetros del sistema (modo desarrollador). -->
+    <record id="param_client_id" model="ir.config_parameter">
+        <field name="key">joma_salsita.client_id</field>
+        <field name="value">0a4a609a-6346-4fca-bbcf-e4f1b27f3294</field>
+    </record>
+    <record id="param_authorization_url" model="ir.config_parameter">
+        <field name="key">joma_salsita.authorization_url</field>
+        <field name="value">https://production-eu-central-1.salsita.ai/environments/authorize</field>
+    </record>
+    <record id="param_script_url" model="ir.config_parameter">
+        <field name="key">joma_salsita.script_url</field>
+        <field name="value">https://joma-mail.salsita.ai/salsita-embedded-configurator.js</field>
+    </record>
+    <record id="param_issuer" model="ir.config_parameter">
+        <field name="key">joma_salsita.issuer</field>
+        <field name="value">joma-website</field>
+    </record>
+    <record id="param_audience" model="ir.config_parameter">
+        <field name="key">joma_salsita.audience</field>
+        <field name="value">joma-mail-configurator</field>
+    </record>
+    <record id="param_token_ttl" model="ir.config_parameter">
+        <field name="key">joma_salsita.token_ttl</field>
+        <field name="value">10800</field>
+    </record>
+    <record id="param_allowed_box_types" model="ir.config_parameter">
+        <field name="key">joma_salsita.allowed_box_types</field>
+        <field name="value">mailbox,parcelbox</field>
+    </record>
+    <!-- Solo la web principal «Joma»; ids separados por comas, vacío = todas -->
+    <record id="param_website_ids" model="ir.config_parameter">
+        <field name="key">joma_salsita.website_ids</field>
+        <field name="value" eval="str(ref('website.default_website'))"/>
+    </record>
+</odoo>
